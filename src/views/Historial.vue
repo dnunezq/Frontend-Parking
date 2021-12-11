@@ -46,20 +46,20 @@
                 <div class="card-header">
             <h6 class="mb-0">Fecha a consultar</h6>
             </div>
-
+                        
     <div>
         <div class="card-body"></div><input type="date" name="Fecha a consultar" step="1" min="2021-12-01" max="2023-12-31" /><button class="btn btn-primary" type="button">Filtrar</button>
     </div>
+
+    <label class="form-label"><b>Ingresos en la fecha</b></label>
+    <input type="text" class="form-control" />
 </div>
 </div>
 
- 
-           
+          
 
         <div class="col-lg-10">
     
-
-
                         <div class="table-responsive table mt-7" id="históricos" role="grid" aria-describedby="dataTable_info" style="overflow-x:auto" align="left">
                             <table class="table table-striped" id="histórico">
                                 <thead>
@@ -142,6 +142,9 @@ ol-lg-9 {
     width: 25%;
   }
 
+.card {
+margin-bottom: 2%;
+}
 
 *, *::before, *::after {
   box-sizing: border-box;
