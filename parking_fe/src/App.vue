@@ -5,7 +5,7 @@
 
   <h1>Parking System</h1>
   <nav>
-    <button v-if="true" > Configuraciones </button>
+    <button v-if="true" v-on:click="loadSettingParking"> Configuraciones </button>
   </nav>
 </div>
 
