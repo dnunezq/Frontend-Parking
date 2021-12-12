@@ -1,22 +1,22 @@
 <template>
     <div class="SettingParking">
     <div class="container_SettingParking">
-    <h2>Parking System</h2>
+  
     
     
 
 <section class="contact-clean" style="background: rgb(255,255,255);">
-        <form v-on:submit.prevent="processSettingParking" style="width: 500px;box-shadow: 0px 0px 12px 5px;">
+        <form style="width: 600px;box-shadow: 0px 0px 12px 5px;">
             <h1 class="text-center" style="width: 450;color: rgb(0,122,255);font-weight: bold;font-family: Alatsi, sans-serif;">Configuraciones</h1>
             <h1 class="text-center" style="width: 450;color: rgb(0,122,255);font-weight: bold;font-family: Alatsi, sans-serif;">Parking System</h1>
-            <div style="transform: scale(1);border-radius: 0;border-top-width: 23px;padding: 0;margin: 22px;"></div><input class="form-control" type="text" v-model="settingParking.name" placeholder="Nombre Completo" name="name">
-            <div style="transform: scale(1);border-radius: 0;border-top-width: 23px;padding: 0;margin: 10px;"></div><input class="form-control" type="text" v-model="settingParking.address" name="address" placeholder="Dirección" style="box-shadow: 0px 0px;">
-            <div style="transform: scale(1);border-radius: 0;border-top-width: 23px;padding: 0;margin: 10px;"></div><input class="form-control" type="text"  v-model="settingParking.admon" name="admon" placeholder="Administrador" style="box-shadow: 0px 0px;">
-            <div style="transform: scale(1);border-radius: 0;border-top-width: 23px;padding: 0;margin: 10px;"></div><input class="form-control" type="number" name="cost" min="0" max="1000" v-model="settingParking.cost" placeholder="Costo minuto">
-            <div style="transform: scale(1);border-radius: 0;border-top-width: 23px;padding: 0;margin: 10px;"></div><input class="form-control" type="number" name="capacity" min="0" max="1000" v-model="settingParking.capacity" placeholder="Capacidad">
-            <div style="transform: scale(1);border-radius: 0;border-top-width: 23px;padding: 0;margin: 10px;"></div><input class="form-control" type="text" name="prefixBilling" v-model="settingParking.prefixBilling" placeholder="Prefijo Factura" style="box-shadow: 0px 0px;" minlength="2" maxlength="4">
-            <div style="transform: scale(1);border-radius: 0;border-top-width: 23px;padding: 0;margin: 10px;"></div><input class="form-control" type="number" name="numStartBilling" min="0" max="1000" v-model="settingParking.numStartBilling" placeholder="Inicio Factura">
-            <div style="transform: scale(1);border-radius: 0;border-top-width: 23px;padding: 0;margin: 10px;"></div><input class="form-control" type="number" name="numEndBilling" min="0" max="1000" v-model="settingParking.numEndBilling" placeholder="Final Factura">
+            <div style="transform: scale(1);border-radius: 0;border-top-width: 23px;padding: 0;margin: 22px;"></div><input class="form-control" type="text" placeholder="Nombre Completo" name="name">
+            <div style="transform: scale(1);border-radius: 0;border-top-width: 23px;padding: 0;margin: 10px;"></div><input class="form-control" type="text" name="address" placeholder="Dirección" style="box-shadow: 0px 0px;">
+            <div style="transform: scale(1);border-radius: 0;border-top-width: 23px;padding: 0;margin: 10px;"></div><input class="form-control" type="text"  name="admon" placeholder="Administrador" style="box-shadow: 0px 0px;">
+            <div style="transform: scale(1);border-radius: 0;border-top-width: 23px;padding: 0;margin: 10px;"></div><input class="form-control" type="number" name="cost" min="0" max="1000" placeholder="Costo minuto">
+            <div style="transform: scale(1);border-radius: 0;border-top-width: 23px;padding: 0;margin: 10px;"></div><input class="form-control" type="number" name="capacity" min="0" max="1000" placeholder="Capacidad">
+            <div style="transform: scale(1);border-radius: 0;border-top-width: 23px;padding: 0;margin: 10px;"></div><input class="form-control" type="text" name="prefixBilling" placeholder="Prefijo Factura" style="box-shadow: 0px 0px;" minlength="2" maxlength="4">
+            <div style="transform: scale(1);border-radius: 0;border-top-width: 23px;padding: 0;margin: 10px;"></div><input class="form-control" type="number" name="numStartBilling" min="0" max="1000" placeholder="Inicio Factura">
+            <div style="transform: scale(1);border-radius: 0;border-top-width: 23px;padding: 0;margin: 10px;"></div><input class="form-control" type="number" name="numEndBilling" min="0" max="1000" placeholder="Final Factura">
             <div style="transform: scale(1);border-radius: 0;border-top-width: 23px;padding: 0;margin: 1px;text-align: center;"><button class="btn btn-primary" type="submit" style="text-align: center;background: rgb(0,122,255);">Modificar</button></div>
         </form>
     </section>
@@ -26,10 +26,27 @@
 </template>
 
 
+<script>
+export default {
+name: 'SettingParking',
+data: function(){
+},
+methods:{
+},
+created: function(){
+}
+}
+</script>
+
+
+
+
 
 
 
 <style>
+
+
 .contact-clean {
   background: #fafafa;
   padding: 80px 0;

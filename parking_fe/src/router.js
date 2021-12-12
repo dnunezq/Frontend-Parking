@@ -10,7 +10,7 @@ const routes = [
     component: App
   },
   {
-    path: '/settingParking',
+    path: '/user/settingParking',
     name: 'settingParking',
     component: SettingParking
   }
