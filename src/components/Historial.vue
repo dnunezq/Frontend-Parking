@@ -44,7 +44,7 @@
                                 </thead>
                                 <tbody>
                                     
-                                     <tr v-for="inactiveClients in clientByInactiveState.clients" :key="inactiveClients.id">
+                                     <tr v-for="inactiveClients in newclientByInactiveState.clients" :key="inactiveClients.id">
                                         <th>{{inactiveClients.billNumber}}</th>
                                         <th>{{inactiveClients.licensePlate}}</th>
                                         <th>{{inactiveClients.entryDate}}</th>
@@ -62,7 +62,7 @@
     </div>
     <div class="col-lg-3">   
         <label class="form-label"><b>Ingresos generados en el periodo de tiempo seleccionado</b></label>
-                <label  class="form-control" >${{clientByInactiveState.earnings}}</label>
+                <label  class="form-control" >${{newclientByInactiveState.earnings}}</label>
                     <div class="card">
                     <div class="card-header">
                 <h6 class="mb-0">Fecha a consultar</h6>
@@ -70,11 +70,11 @@
                          
             <div>
                 <form v-on:submit.prevent="filterByDate" class="inputhistorical" >
-                <input  v-model="user.dat" type="date" style="width:100%; margin:10% 0px" name="Fecha a consultar"  />
+                <input  v-model.lazy="this.date" type="date" style="width:100%; margin:10% 0px" name="Fecha a consultar"  />
 
     <!--TIPO DE CONSULTA-->   
                 
-                <select class="form-select" v-model="user.typDate" aria-label="Tipo de consulta" style="width:100%; margin:0px 0px 10% 0px" >
+                <select class="form-select" v-model.lazy="this.typeDate" aria-label="Tipo de consulta" style="width:100%; margin:0px 0px 10% 0px" >
                     <option disabled value="">Tipo de consulta</option>
                     <option value="all" >Todos</option>
                     <option value="day" >Fecha exacta</option>
@@ -120,27 +120,35 @@ export default {
             clients: [],
             earnings:0
         },
+        newclientByInactiveState: {
+            clients: [],
+            earnings:0
+        },
     
         user:{
             typDate: "all",
-            dat: "2020-12-08"
+            dat: "2021-12-08"
         },
-        typeDate:"all",
-        date:"2020-12-08"
+        typeDate: "month",
+        date:"2021-12-11"
         
        
         
     };
   },
     methods: {
-    filterByDate:  function(){
-        this.date=this.user.dat
-        this.typeDate=this.user.typDate
-     
-      
-        console.log(this.typeDate,this.date,"dssdsds",typeof(this.user.dat));
+    getActualData:  async function(){
+      this.newclientByInactiveState.earnings=this.clientByInactiveState.earnings
+      this.newclientByInactiveState.clients=this.clientByInactiveState.clients
+    
 
-    }
+    },
+    filterByDate:  async function(){
+        console.log(this.date,this.typeDate)
+        this.getActualData()
+        
+    },
+    
 
   },
   apollo: {
@@ -171,8 +179,9 @@ export default {
       },
     }
   },
-  created: function () {
-    this.$apollo.queries.clientByInactiveState;
+  created: async function () {
+    await this.$apollo.queries.clientByInactiveState.refetch();
+    this.getActualData()
   }
   
 };

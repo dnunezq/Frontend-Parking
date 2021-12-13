@@ -31,9 +31,9 @@ export default {
     return {
       
       actualSettings: {
-          admin:"",
-          nameParking:"",
-          adressParking :"",
+          admin:"admin",
+          nameParking:"parking",
+          adressParking :"adress",
           minutePrice:0,
           capacity:0,
           prefix:"",
