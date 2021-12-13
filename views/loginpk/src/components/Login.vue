@@ -1,10 +1,14 @@
 <template>
   <div class="split left">
     <div class="centered">
+      <a class="navbar-brand float-left" target="_blank">
+        <img alt="Logoapp" src="../assets/logo1.png" height="65" width="150" />
+      </a>
       <form v-on:submit.prevent="processLogInUser">
+        <br />
         <h3>Iniciar Sesion</h3>
 
-        <div class="form-group">
+        <div class="form-group mt-3">
           <input
             type="email"
             class="form-control form-control-lg"
@@ -22,23 +26,16 @@
           />
         </div>
         <br />
+
         <button type="submit" class="btn btn-dark btn-lg btn-block">
           Iniciar Sesion
         </button>
+        <p class="forgot-password text-right mt-3">
+          ¿Aun no te encuentras registrado?
+          <router-link :to="{ name: 'signup' }">registrate</router-link>
+        </p>
         <br />
-        <div class="social-icons mt-3">
-          <ul>
-            <li>
-              <a href="#"><i class="fa fa-google"></i></a>
-            </li>
-            <li>
-              <a href="#"><i class="fa fa-facebook"></i></a>
-            </li>
-            <li>
-              <a href="#"><i class="fa fa-twitter"></i></a>
-            </li>
-          </ul>
-        </div>
+        <div class="social-icons mt-3"></div>
       </form>
     </div>
   </div>

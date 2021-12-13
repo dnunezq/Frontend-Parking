@@ -1,10 +1,14 @@
 <template>
   <div class="split left">
     <div class="centered">
+      <a class="navbar-brand float-left" target="_blank">
+        <img alt="Logoapp" src="../assets/logo1.png" height="65" width="150" />
+      </a>
       <form v-on:submit.prevent="processSignUp">
+        <br />
         <h3>Crear Cuenta</h3>
 
-        <div class="form-group">
+        <div class="form-group mt-3">
           <input
             type="text"
             class="form-control form-control-lg"
@@ -44,7 +48,7 @@
           Crear Cuenta
         </button>
 
-        <p class="forgot-password text-right">
+        <p class="forgot-password text-right mt-3">
           ¿ya estas registrado
           <router-link :to="{ name: 'login' }">Inicia sesion?</router-link>
         </p>

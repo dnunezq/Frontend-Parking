@@ -1,28 +1,6 @@
 <template>
   <div class="vue-tempalte">
-    <!-- Navigation -->
-    <nav
-      class="navbar shadow bg-white rounded justify-content-between flex-nowrap flex-row fixed-top"
-    >
-      <div class="container">
-        <a class="navbar-brand float-left" target="_blank">
-          <img alt="Logoapp" src="./assets/logo1.png" height="65" width="150" />
-        </a>
-        <ul class="nav navbar-nav flex-row float-right">
-          <li class="nav-item">
-            <router-link class="nav-link pr-3" to="/login"
-              >Inicia Sesion
-            </router-link>
-          </li>
 
-          <li class="nav-item">
-            <router-link class="btn btn-outline-primary" to="/"
-              >Crea tu cuenta</router-link
-            >
-          </li>
-        </ul>
-      </div>
-    </nav>
 
     <!-- Main -->
     <div class="App">
