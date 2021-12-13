@@ -1,48 +1,50 @@
 <template>
-  <div class="vue-tempalte">
-    <form v-on:submit.prevent="processLogInUser">
-      <h3>Iniciar Sesion</h3>
+  <div class="split left">
+    <div class="centered">
+      <form v-on:submit.prevent="processLogInUser">
+        <h3>Iniciar Sesion</h3>
 
-      <div class="form-group">
-        <input
-          type="email"
-          class="form-control form-control-lg"
-          placeholder="Usuario"
-          v-model="user.username"
-        />
-      </div>
-      <br />
-      <div class="form-group">
-        <input
-          type="password"
-          class="form-control form-control-lg"
-          placeholder="Clave"
-          v-model="user.password"
-        />
-      </div>
-      <br />
-      <button type="submit" class="btn btn-dark btn-lg btn-block">
-        Iniciar Sesion
-      </button>
+        <div class="form-group">
+          <input
+            type="email"
+            class="form-control form-control-lg"
+            placeholder="Usuario"
+            v-model="user.username"
+          />
+        </div>
+        <br />
+        <div class="form-group">
+          <input
+            type="password"
+            class="form-control form-control-lg"
+            placeholder="Clave"
+            v-model="user.password"
+          />
+        </div>
+        <br />
+        <button type="submit" class="btn btn-dark btn-lg btn-block">
+          Iniciar Sesion
+        </button>
+        <br />
+        <div class="social-icons mt-3">
+          <ul>
+            <li>
+              <a href="#"><i class="fa fa-google"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa fa-facebook"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa fa-twitter"></i></a>
+            </li>
+          </ul>
+        </div>
+      </form>
+    </div>
+  </div>
 
-      <p class="forgot-password text-right mt-2 mb-4">
-        <router-link to="/forgot-password">¿Olvidaste la clave ?</router-link>
-      </p>
-
-      <div class="social-icons">
-        <ul>
-          <li>
-            <a href="#"><i class="fa fa-google"></i></a>
-          </li>
-          <li>
-            <a href="#"><i class="fa fa-facebook"></i></a>
-          </li>
-          <li>
-            <a href="#"><i class="fa fa-twitter"></i></a>
-          </li>
-        </ul>
-      </div>
-    </form>
+  <div class="split right">
+    <div class="centered"></div>
   </div>
 </template>
 

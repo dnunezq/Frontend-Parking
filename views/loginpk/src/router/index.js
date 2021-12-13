@@ -11,11 +11,6 @@ const routes = [
     name: "login",
     component: () => import("../components/Login.vue"),
   },
-  {
-    path: "/forgot-password",
-    name: "forgot-password",
-    component: () => import("../components/ForgotPassword.vue"),
-  },
 ];
 const router = createRouter({
   history: createWebHistory(),
