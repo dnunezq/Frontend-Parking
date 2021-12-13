@@ -1,5 +1,10 @@
 <template>
-
+ <div class="d-flex flex-column" id="content-wrapper">
+        <div id="content">
+            
+            <div class="container-fluid">
+                <div class="card shadow">
+                    
     <div  class="form-container mt-5">
         <form v-on:submit.prevent="createClient" class="w-70 mx-auto" id="entryForm">            
             <div class="form-group">
@@ -49,6 +54,11 @@
 
             </div>
     </div>
+    </div>
+
+            </div>
+    </div>
+ </div>
 </template>
 
 <script>
@@ -97,7 +107,7 @@ export default {
           },
         })
         .then((result) => {
-            alert("Registro exitoso")
+            
             this.$apollo.queries.clientByActiveState.refetch()
         })
         .catch((error) => {

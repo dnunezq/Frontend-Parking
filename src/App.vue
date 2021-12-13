@@ -4,7 +4,7 @@
 
     <div class="header">
 
-      <nav v-if="is_auth" class="navbar navbar-light navbar-expand-lg navigation-clean-button">
+      <nav v-if="is_auth" class="navbar navbar-light navbar-expand-lg navigation-clean-button" >
         <div class="container"><a class="navbar-brand" href="#">Parking Name</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="navbar-nav me-auto">
@@ -20,13 +20,7 @@
     </nav>
     </div>
     
-<div class="vue-tempalte">
 
-
-    <!-- Main -->
-    <div class="App">
-      <div class="vertical-center">
-        <div class="inner-block">
     <div class="main-component">
       <router-view  
         v-on:completedLogIn="completedLogIn"
@@ -35,10 +29,6 @@
       >
       </router-view>
     </div>
-    </div>
-      </div>
-    </div>
-  </div>
     
 
     
@@ -75,12 +65,12 @@ export default {
 			localStorage.setItem("username", data.username);
 			localStorage.setItem("token_access", data.token_access);
 			localStorage.setItem("token_refresh", data.token_refresh);
-			alert("Autenticación Exitosa");
+
 			this.loadHome();
     },
 
     completedSignUp: function(data) {
-			alert("Registro Exitoso");
+		
 			this.completedLogIn(data);
     },
 
@@ -98,7 +88,6 @@ export default {
 
     logOut: function () {
 			localStorage.clear();
-			alert("Sesión Cerrada");
       this.loadLogIn();
 		},
   }

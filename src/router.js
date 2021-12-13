@@ -5,12 +5,10 @@ import { ApolloClient, createHttpLink, InMemoryCache } from '@apollo/client/core
 import LogIn from './components/LogIn.vue'
 import SignUp from './components/SignUp.vue'
 import Home from './components/Home.vue'
-import Account from './components/Account.vue'
 import Vehicles from './components/Vehicles.vue'
 import Historial from './components/Historial.vue'
 import Settings from './components/Settings.vue'
 import DetailByLicensePlate from './components/DetailByLicensePlate.vue'
-import Transaction from './components/Transaction.vue'
 
 const routes = [{
         path: '/user/logIn',
@@ -55,18 +53,8 @@ const routes = [{
         component: Historial,
         meta: { requiresAuth: true }
     },
-    {
-        path: '/user/account',
-        name: "account",
-        component: Account,
-        meta: { requiresAuth: true }
-    },
-    {
-        path: '/user/transaction',
-        name: "transaction",
-        component: Transaction,
-        meta: { requiresAuth: true }
-    }
+    
+    
 ];
 
 const router = createRouter({

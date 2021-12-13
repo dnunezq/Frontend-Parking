@@ -1,16 +1,15 @@
 <template>
-  <div id="bill" class="bill">
-    <div class="header">
-      <h1>Safe Parking</h1>
-    </div>
-  </div>
-  <div class ="main-component">
-    <h2>Vehiculo</h2>
-    
-      <div class="form-group">
-        <label for="placa">Placa</label>
-        <input type="text" class="form-control" id="placa" placeholder="Placa" v-model="clientByLicensePlate.licensePlate" disabled>
-      </div>
+  <div class="d-flex flex-column" id="content-wrapper">
+        <div id="content">
+            
+            <div class="container-fluid">
+                <div class="card shadow">
+                    <div class="card-header py-4" style="text-align:center">
+                        <p class="h4 text-primary"><b>Vehículo</b></p>
+                        <p class="h4 text-primary" ><b>{{userLicense}}</b></p>
+                    </div>
+                   
+      <div class="detl">
       <div class="form-group">
       <label for="horaEntrada">Entrada</label>
       <input type="text" class="form-control" id="horaEntrada" v-model="clientByLicensePlate.entryDate" placeholder="Fecha de ingreso" disabled>
@@ -28,13 +27,19 @@
       <input type="text" class="form-control" id="costo" v-model="clientByLicensePlate.cost" placeholder="Costo total" disabled>
       </div>
       <div class="button-group">
-        <button v-on:click="returnView">Cancelar</button>
-        <button  v-on:click="saveClient">Guardar</button>
+        <button class="btn-primary" v-on:click="returnView">Cancelar</button>
+        <button  class="btn-primary" v-on:click="saveClient">Guardar</button>
       </div>
+      </div>
+                </div>
+              </div>
+        </div>
+        </div>    
     
-  </div>
-  <div class ="footer">
-  </div>
+      
+    
+ 
+  
 </template>
 <script>
 import gql from "graphql-tag";
@@ -96,7 +101,7 @@ export default {
             },
             })
             .then((result) => {
-                alert("Factura exitosa")
+                
                 this.$router.push({name: "vehicles"})
 
                 
@@ -155,4 +160,15 @@ export default {
   justify-content: center;
   align-items: center;
 }
+.detl {
+  padding: 0px 30%;
+}
+.form-control{
+  margin:2% 0px;
+}
+.btn-primary{
+            
+            border-radius: 20px;
+        
+        }
 </style>

@@ -2,17 +2,25 @@
     <div class="SettingParking">
     <div class="container_SettingParking">
     
-<section class="contact-clean" style="background: rgb(255,255,255);">
+<section class="contact-clean" style="background: rgb(255,255,255); ">
         <form  v-on:submit.prevent="newUpdateSettings"  style="width: 500px;box-shadow: 0px 0px 12px 5px;">
             <h1 class="text-center" style="width: 450;color: rgb(0,122,255);font-weight: bold;font-family: Alatsi, sans-serif;">Configuraciones</h1>
             <h1 class="text-center" style="width: 450;color: rgb(0,122,255);font-weight: bold;font-family: Alatsi, sans-serif;">Parking System</h1>
+            <label >Nombre Parqueadero:</label>
             <div style="transform: scale(1);border-radius: 0;border-top-width: 23px;padding: 0;margin: 22px;"></div><input class="form-control" v-model="getactualSettings.nameParking" type="text"  placeholder="Nombre Completo" name="name"  >
+            <label >Administrador:</label>
             <div style="transform: scale(1);border-radius: 0;border-top-width: 23px;padding: 0;margin: 10px;"></div><input class="form-control" v-model="getactualSettings.admin" type="text"   name="admon" placeholder="Administrador" style="box-shadow: 0px 0px;">
+            <label >Precio del minuto:</label>
             <div style="transform: scale(1);border-radius: 0;border-top-width: 23px;padding: 0;margin: 10px;"></div><input class="form-control" v-model="getactualSettings.minutePrice" type="number" name="cost"  placeholder="Costo minuto">
+            <label >Capacidad:</label>
             <div style="transform: scale(1);border-radius: 0;border-top-width: 23px;padding: 0;margin: 10px;"></div><input class="form-control" v-model="getactualSettings.capacity" type="number" name="capacity" placeholder="Capacidad">
+            <label >Prefijo Facturación:</label>
             <div style="transform: scale(1);border-radius: 0;border-top-width: 23px;padding: 0;margin: 10px;"></div><input class="form-control" v-model="getactualSettings.prefix" type="text" name="prefixBilling"  placeholder="Prefijo Factura" style="box-shadow: 0px 0px;" >
+            <label >Inicio Facturación:</label>
             <div style="transform: scale(1);border-radius: 0;border-top-width: 23px;padding: 0;margin: 10px;"></div><input class="form-control" v-model="getactualSettings.billNumberInit" type="number" name="numStartBilling" placeholder="Inicio Factura">
+            <label >Límite facturación:</label>
             <div style="transform: scale(1);border-radius: 0;border-top-width: 23px;padding: 0;margin: 10px;"></div><input class="form-control" v-model="getactualSettings.billNumberEnd" type="number" name="numEndBilling"   placeholder="Final Factura">
+            <label >Última factura:</label>
             <div style="transform: scale(1);border-radius: 0;border-top-width: 23px;padding: 0;margin: 10px;"></div><input class="form-control" v-model="actualSettings.lastBillNumber" type="number" name="numEndBilling"   placeholder="Factura actual" disabled>
             <div style="transform: scale(1);border-radius: 0;border-top-width: 23px;padding: 0;margin: 1px;text-align: center;"><button class="btn btn-primary" type="submit" style="text-align: center;background: rgb(0,122,255);">Modificar</button></div>
         </form>
@@ -91,7 +99,7 @@ export default {
           },
         })
         .then((result) => {
-            alert("Modificación exitosa")
+           
             
         })
         .catch((error) => {

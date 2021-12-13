@@ -1,34 +1,53 @@
 <template>
 
-  
-
   <section class="article-list">
-        <div class="container"  onselectstart="return false;" 
- >
+    <section class="article-list">
+        <div class="container"  onselectstart="return false;" >
             <div class="intro" >
                 <h2 class="text-center" >Bienvenido</h2>
-                <p class="text-center" style="font-size: 50px;">{{ userDetailById.username }}</p>
+                <p class="text-center" style="font-size: 50px; margin:0px 0px 50px 0px">{{ userDetailById.username }}</p>
             </div>
-            <div class="row articles">
-                <div class="col-sm-6 col-md-4 item">
-                    <h3 class="name">Configuracion</h3>
-                    <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.</p>
-                    <router-link class="action" to="SignUp"><i class="fa fa-arrow-circle-right"></i></router-link>
-                </div>
-                <div class="col-sm-6 col-md-4 item">
-                    <h3 class="name">Vehículos</h3>
-                    <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.</p>
-                    <router-link class="action" to="Vehicles">fdsfdsfdsfsdfsd</router-link>
-                </div>
-                <div class="col-sm-6 col-md-4 item">
-                    <h3 class="name">Historial</h3>
-                    <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.</p>
-                   
-                    <router-link class="action" to="SignUp"><i class="fa fa-arrow-circle-right"></i></router-link>
-                </div>
-            </div>
+            
         </div>
     </section>
+        <div class="container">
+            
+
+<div class="container-fluid">            
+<div class="row articles">
+                <div class="col-sm-6 col-md-4 item" a style="background-color:#FAFAFA" href="#"> 
+                    <h3 class="name">Configuracion</h3>
+                    <p class="description">Personaliza el sistema ingresando información del parqueadero como nombre, dirección y datos del administrador. Así mismo configura el costo del servicio por minuto, capacidad del parqueadero y resolución de facturación DIAN</p>
+                    <router-link class="action" to="Settings"><i class="fa fa-arrow-circle-right"></i></router-link>
+                    <img src="..\assets\Conf.png" class="img-fluid" width="200" heigth="200" alt="No disponible">       
+                                      
+                    </div>
+
+<!--VEHÍCULOS-->
+
+                <div class="col-sm-6 col-md-4 item" a style="background-color:#EEEEEE" href="#"> 
+                    <h3 class="name">Vehículos</h3>
+                    <p class="description">Regístra el ingreso de los vehículos al parqueadero usando la placa del mismo y obten automáticamente el tiempo de uso y el costo total del servicio. También visualiza las plazas disponibles.</p>
+                    <router-link class="action" to="Vehicles"><i class="fa fa-arrow-circle-right"></i></router-link>
+                    <img src="..\assets\Veh.png" class="img-fluid" width="250" heigth="250" alt="No disponible">       
+                    
+                </div>
+
+<!--HISTORIAL-->
+
+                <div class="col-sm-6 col-md-4 item" a style="background-color:#FAFAFA" href="#"> 
+                    <h3 class="name">Historial</h3>
+                    <p class="description">Genera reportes de los vehículos que ingresaron al parqueadero por fecha, mes y año y visualiza los ingresos generados en el periodo seleccionado</p>
+                   <router-link class="action" to="Historial"><i class="fa fa-arrow-circle-right" ></i></router-link>
+                    <img src="..\assets\Hist.png" class="img-fluid" width="200" heigth="200" alt="No disponible">       
+                    
+                </div>
+            </div>
+</div>
+        </div>
+    </section>
+
+  
   
 </template>
 
@@ -73,7 +92,7 @@ export default {
 </script>
 
 
-<style>
+<style >
 
 .article-list {
   color: #313437;
@@ -148,6 +167,5 @@ export default {
   opacity: 1;
 }
 
-
-
 </style>
+    

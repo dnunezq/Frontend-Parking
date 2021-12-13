@@ -144,7 +144,7 @@ export default {
 
     },
     filterByDate:  async function(){
-        console.log(this.date,this.typeDate)
+        
         this.getActualData()
         
     },
