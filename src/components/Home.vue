@@ -3,10 +3,11 @@
   
 
   <section class="article-list">
-        <div class="container">
-            <div class="intro">
-                <h2 class="text-center">Bienvenido</h2>
-                <p class="text-center" style="font-size: 20px;">{{ userDetailById.username }}</p>
+        <div class="container"  onselectstart="return false;" 
+ >
+            <div class="intro" >
+                <h2 class="text-center" >Bienvenido</h2>
+                <p class="text-center" style="font-size: 50px;">{{ userDetailById.username }}</p>
             </div>
             <div class="row articles">
                 <div class="col-sm-6 col-md-4 item">

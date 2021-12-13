@@ -20,7 +20,13 @@
     </nav>
     </div>
     
+<div class="vue-tempalte">
 
+
+    <!-- Main -->
+    <div class="App">
+      <div class="vertical-center">
+        <div class="inner-block">
     <div class="main-component">
       <router-view  
         v-on:completedLogIn="completedLogIn"
@@ -29,6 +35,10 @@
       >
       </router-view>
     </div>
+    </div>
+      </div>
+    </div>
+  </div>
     
 
     
