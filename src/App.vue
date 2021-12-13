@@ -159,11 +159,14 @@ export default {
   color: #465765;
 }
 
-.navigation-clean-button.navbar-light .navbar-nav .nav-link:focus, .navigation-clean-button.navbar-light .navbar-nav .nav-link:hover {
-  color: #0e61a5 !important;
+.navigation-clean-button.navbar-light .navbar-nav , .navigation-clean-button.navbar-light .navbar-nav  {
+  color: #494949 !important;
   background-color: transparent;
 }
-
+.nav-link:hover {
+  color: #f5f5f5 !important;
+  background-color: transparent;
+}
 .navigation-clean-button .navbar-nav > li > .dropdown-menu {
   margin-top: -5px;
   box-shadow: 0 4px 8px rgba(0,0,0,.1);

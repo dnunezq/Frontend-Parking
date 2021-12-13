@@ -3,16 +3,17 @@
     <div class="container_SettingParking">
     
 <section class="contact-clean" style="background: rgb(255,255,255);">
-        <form  v-on:submit.prevent="updateSettings" style="width: 500px;box-shadow: 0px 0px 12px 5px;">
+        <form  v-on:submit.prevent="newUpdateSettings"  style="width: 500px;box-shadow: 0px 0px 12px 5px;">
             <h1 class="text-center" style="width: 450;color: rgb(0,122,255);font-weight: bold;font-family: Alatsi, sans-serif;">Configuraciones</h1>
             <h1 class="text-center" style="width: 450;color: rgb(0,122,255);font-weight: bold;font-family: Alatsi, sans-serif;">Parking System</h1>
-            <div style="transform: scale(1);border-radius: 0;border-top-width: 23px;padding: 0;margin: 22px;"></div><input class="form-control" v-model="actualSettings.nameParking" type="text"  placeholder="Nombre Completo" name="name"  >
-            <div style="transform: scale(1);border-radius: 0;border-top-width: 23px;padding: 0;margin: 10px;"></div><input class="form-control" v-model="actualSettings.admin" type="text"   name="admon" placeholder="Administrador" style="box-shadow: 0px 0px;">
-            <div style="transform: scale(1);border-radius: 0;border-top-width: 23px;padding: 0;margin: 10px;"></div><input class="form-control" v-model="actualSettings.minutePrice" type="number" name="cost"  placeholder="Costo minuto">
-            <div style="transform: scale(1);border-radius: 0;border-top-width: 23px;padding: 0;margin: 10px;"></div><input class="form-control" v-model="actualSettings.capacity" type="number" name="capacity" placeholder="Capacidad">
-            <div style="transform: scale(1);border-radius: 0;border-top-width: 23px;padding: 0;margin: 10px;"></div><input class="form-control" v-model="actualSettings.prefix" type="text" name="prefixBilling"  placeholder="Prefijo Factura" style="box-shadow: 0px 0px;" >
-            <div style="transform: scale(1);border-radius: 0;border-top-width: 23px;padding: 0;margin: 10px;"></div><input class="form-control" v-model="actualSettings.billNumberInit" type="number" name="numStartBilling" placeholder="Inicio Factura">
-            <div style="transform: scale(1);border-radius: 0;border-top-width: 23px;padding: 0;margin: 10px;"></div><input class="form-control" v-model="actualSettings.billNumberEnd" type="number" name="numEndBilling"   placeholder="Final Factura">
+            <div style="transform: scale(1);border-radius: 0;border-top-width: 23px;padding: 0;margin: 22px;"></div><input class="form-control" v-model="getactualSettings.nameParking" type="text"  placeholder="Nombre Completo" name="name"  >
+            <div style="transform: scale(1);border-radius: 0;border-top-width: 23px;padding: 0;margin: 10px;"></div><input class="form-control" v-model="getactualSettings.admin" type="text"   name="admon" placeholder="Administrador" style="box-shadow: 0px 0px;">
+            <div style="transform: scale(1);border-radius: 0;border-top-width: 23px;padding: 0;margin: 10px;"></div><input class="form-control" v-model="getactualSettings.minutePrice" type="number" name="cost"  placeholder="Costo minuto">
+            <div style="transform: scale(1);border-radius: 0;border-top-width: 23px;padding: 0;margin: 10px;"></div><input class="form-control" v-model="getactualSettings.capacity" type="number" name="capacity" placeholder="Capacidad">
+            <div style="transform: scale(1);border-radius: 0;border-top-width: 23px;padding: 0;margin: 10px;"></div><input class="form-control" v-model="getactualSettings.prefix" type="text" name="prefixBilling"  placeholder="Prefijo Factura" style="box-shadow: 0px 0px;" >
+            <div style="transform: scale(1);border-radius: 0;border-top-width: 23px;padding: 0;margin: 10px;"></div><input class="form-control" v-model="getactualSettings.billNumberInit" type="number" name="numStartBilling" placeholder="Inicio Factura">
+            <div style="transform: scale(1);border-radius: 0;border-top-width: 23px;padding: 0;margin: 10px;"></div><input class="form-control" v-model="getactualSettings.billNumberEnd" type="number" name="numEndBilling"   placeholder="Final Factura">
+            <div style="transform: scale(1);border-radius: 0;border-top-width: 23px;padding: 0;margin: 10px;"></div><input class="form-control" v-model="actualSettings.lastBillNumber" type="number" name="numEndBilling"   placeholder="Factura actual" disabled>
             <div style="transform: scale(1);border-radius: 0;border-top-width: 23px;padding: 0;margin: 1px;text-align: center;"><button class="btn btn-primary" type="submit" style="text-align: center;background: rgb(0,122,255);">Modificar</button></div>
         </form>
     </section>
@@ -28,34 +29,46 @@ export default {
   name: "Settings",
   data: function () {
     return {
-      user:"nuvf",
+      
       actualSettings: {
-        admin:"admin",
-        capacity:100,
-        
-        nameParking:"parking",
-        minutePrice:37,
-        prefix:"999",
-        billNumberInit:1000,
-        billNumberEnd:10000
-        
-       
+          admin:"",
+          nameParking:"",
+          adressParking :"",
+          minutePrice:0,
+          capacity:0,
+          prefix:"",
+          billNumberInit:0,
+          billNumberEnd:1,
+          lastBillNumber:""
       },
-      datos: {
-        capacity:this.actualSettings.capacity,
-        admin:this.actualSettings.admin,
-        nameParking:this.actualSettings.nameParking,
-        minutePrice:this.actualSettings.minutePrice,
-        prefix:this.actualSettings.prefix,
-        billNumberInit:this.actualSettings.billNumberInit,
-        billNumberEnd:this.actualSettings.billNumberEnd
-       
+      getactualSettings: {
+          admin:"",
+          nameParking:"",
+          adressParking :"",
+          minutePrice:0,
+          capacity:0,
+          prefix:"",
+          billNumberInit:0,
+          billNumberEnd:1,
+         
+          
       }
     };
   },
   methods: {
-    updateSettings: async function() {
-      
+    updateSettings:  async function(){
+        
+        this.getactualSettings.admin=this.actualSettings.admin;
+        this.getactualSettings.nameParking=this.actualSettings.nameParking;
+        this.getactualSettings.adressParking =this.actualSettings.adressParking;
+        this.getactualSettings.minutePrice=this.actualSettings.minutePrice;
+        this.getactualSettings.capacity=this.actualSettings.capacity;
+        this.getactualSettings.prefix=this.actualSettings.prefix;
+        this.getactualSettings.billNumberInit=this.actualSettings.billNumberInit;
+        this.getactualSettings.billNumberEnd=this.actualSettings.billNumberEnd;
+        console.log(this.getactualSettings)
+    },
+    newUpdateSettings: async function() {
       await this.$apollo
         .mutate({
           mutation: gql`
@@ -74,18 +87,23 @@ export default {
             }
           `,
           variables: {
-            settingsParking: this.datos,
+            settingsParking: this.getactualSettings
           },
         })
         .then((result) => {
-          
-          alert("actualizacion exitosa")
-          this.$apollo.queries.actualSettings.refetch();
+            alert("Modificación exitosa")
+            
         })
         .catch((error) => {
-          alert("ERROR 401: Credenciales Incorrectas.");
-        });
+          alert("error modificacion");
+        })
+        ;
     },
+    
+
+
+    
+
   },
   apollo: {
     actualSettings: {
@@ -106,14 +124,17 @@ export default {
       `,
       variables() {
         return {
-          user: "dsds",
+          user: "user",
         };
-      }
-    },
+      },
+    }
   },
-  created: function () {
-    this.$apollo.queries.actualSettings.refetch();
+  created: async function () {
+    await this.$apollo.queries.actualSettings.refetch();
+    this.updateSettings();
   }
+  
+  
 };
 </script>
 
